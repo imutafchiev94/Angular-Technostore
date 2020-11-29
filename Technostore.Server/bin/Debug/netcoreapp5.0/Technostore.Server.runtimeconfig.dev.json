@@ -1,0 +1,8 @@
+﻿{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\imuta\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\imuta\\.nuget\\packages"
+    ]
+  }
+}

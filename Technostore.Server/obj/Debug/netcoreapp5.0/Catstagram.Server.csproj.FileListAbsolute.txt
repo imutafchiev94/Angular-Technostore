@@ -1,0 +1,116 @@
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/appsettings.Development.json
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/appsettings.json
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Catstagram.Server.StaticWebAssets.xml
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Catstagram.Server
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Catstagram.Server.deps.json
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Catstagram.Server.runtimeconfig.json
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Catstagram.Server.runtimeconfig.dev.json
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Catstagram.Server.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/ref/Catstagram.Server.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Catstagram.Server.pdb
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Humanizer.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.AspNetCore.Identity.UI.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.Data.SqlClient.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.EntityFrameworkCore.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.Identity.Client.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.IdentityModel.Logging.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.IdentityModel.Protocols.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.IdentityModel.Tokens.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/System.Configuration.ConfigurationManager.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/System.IdentityModel.Tokens.Jwt.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/System.Runtime.Caching.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/System.Security.Cryptography.ProtectedData.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.csprojAssemblyReference.cache
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.GeneratedMSBuildEditorConfig.editorconfig
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.AssemblyInfoInputs.cache
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.AssemblyInfo.cs
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.csproj.CoreCompileInputs.cache
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.MvcApplicationPartsAssemblyInfo.cs
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.MvcApplicationPartsAssemblyInfo.cache
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/staticwebassets/Catstagram.Server.StaticWebAssets.Manifest.cache
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/staticwebassets/Catstagram.Server.StaticWebAssets.xml
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/scopedcss/bundle/Catstagram.Server.styles.css
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.RazorTargetAssemblyInfo.cache
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.csproj.CopyComplete
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/ref/Catstagram.Server.dll
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.pdb
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/obj/Debug/netcoreapp5.0/Catstagram.Server.genruntimeconfig.cache
+/home/ivaylo/Data Structures/Catstagram.Server/Catstagram.Server/bin/Debug/netcoreapp5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\appsettings.Development.json
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\appsettings.json
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Catstagram.Server.exe
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Catstagram.Server.deps.json
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Catstagram.Server.runtimeconfig.json
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Catstagram.Server.runtimeconfig.dev.json
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Catstagram.Server.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\ref\Catstagram.Server.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Catstagram.Server.pdb
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Humanizer.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.Data.SqlClient.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.Identity.Client.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.IdentityModel.Logging.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.IdentityModel.Protocols.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\Microsoft.IdentityModel.Tokens.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\System.Configuration.ConfigurationManager.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\System.IdentityModel.Tokens.Jwt.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\System.Runtime.Caching.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\System.Security.Cryptography.ProtectedData.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\bin\Debug\netcoreapp5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.csprojAssemblyReference.cache
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.GeneratedMSBuildEditorConfig.editorconfig
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.AssemblyInfoInputs.cache
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.AssemblyInfo.cs
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.csproj.CoreCompileInputs.cache
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.MvcApplicationPartsAssemblyInfo.cache
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\staticwebassets\Catstagram.Server.StaticWebAssets.Manifest.cache
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\staticwebassets\Catstagram.Server.StaticWebAssets.xml
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\scopedcss\bundle\Catstagram.Server.styles.css
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.RazorTargetAssemblyInfo.cache
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.csproj.CopyComplete
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\ref\Catstagram.Server.dll
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.pdb
+F:\Development\MyTestApp\TestAsp\Catstagram.Server\obj\Debug\netcoreapp5.0\Catstagram.Server.genruntimeconfig.cache
