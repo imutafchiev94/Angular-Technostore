@@ -32,7 +32,7 @@ namespace Technostore.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddDbContext<CatstagramDbContext>(options => options
+                .AddDbContext<TechnostoreDbContext>(options => options
                 .UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<User, IdentityRole>(options =>
@@ -43,7 +43,7 @@ namespace Technostore.Server
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireUppercase = false;
                 })
-                 .AddEntityFrameworkStores<CatstagramDbContext>();
+                 .AddEntityFrameworkStores<TechnostoreDbContext>();
 
             var applicationSettingsConfiguration = this.Configuration.GetSection("ApplicationSettings");
             services.Configure<AppSettings>(applicationSettingsConfiguration);

@@ -8,7 +8,7 @@ namespace Technostore.Server.Controllers
     
     public class HomeController : ApiController
     {
-        //[Authorize]
+        [Authorize]
         public IActionResult Get()
         {
             return Ok("Works");

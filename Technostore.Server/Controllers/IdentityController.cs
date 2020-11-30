@@ -47,7 +47,7 @@ namespace Technostore.Server.Controllers
         }
 
         [Route(nameof(Login))] 
-        public async Task<ActionResult<string>> Login(LoginRequestModel model)
+        public async Task<ActionResult<object>> Login(LoginRequestModel model)
         {
             var user = await this.userManager.FindByNameAsync(model.UserName);
             if (user == null)
@@ -76,7 +76,10 @@ namespace Technostore.Server.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var encriptedToken = tokenHandler.WriteToken(token);
 
-            return encriptedToken;
+            return new
+            {
+                Token = encriptedToken
+            };
         }
     }
 }

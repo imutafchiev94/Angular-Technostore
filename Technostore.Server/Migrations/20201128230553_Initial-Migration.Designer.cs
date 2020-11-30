@@ -9,7 +9,7 @@ using Technostore.Server.Data;
 
 namespace Technostore.Server.Migrations
 {
-    [DbContext(typeof(CatstagramDbContext))]
+    [DbContext(typeof(TechnostoreDbContext))]
     [Migration("20201128230553_Initial-Migration")]
     partial class InitialMigration
     {

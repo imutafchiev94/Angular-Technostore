@@ -5715,19 +5715,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\imuta\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Development\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj",
+      "projectUniqueName": "C:\\Projects\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj",
       "projectName": "Technostore.Server",
-      "projectPath": "F:\\Development\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj",
-      "packagesPath": "C:\\Users\\imuta\\.nuget\\packages\\",
-      "outputPath": "F:\\Development\\Angular-Technostore\\Technostore.Server\\obj\\",
+      "projectPath": "C:\\Projects\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\Angular-Technostore\\Technostore.Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\imuta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

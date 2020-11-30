@@ -14,7 +14,7 @@ namespace Technostore.Server.Infrastructure
         {
             using var services = app.ApplicationServices.CreateScope();
 
-            var dbContext = services.ServiceProvider.GetService<CatstagramDbContext>();
+            var dbContext = services.ServiceProvider.GetService<TechnostoreDbContext>();
             
             dbContext.Database.Migrate();
         }
