@@ -58,6 +58,10 @@ namespace Technostore.Server.Data.Models
 
         public string Battery { get; set; }
 
+        public string AuthorId { get; set; }
+
+        public User Author { get; set; }
+
         public ICollection<ProductOrder> Order { get; set; }
     }
 }

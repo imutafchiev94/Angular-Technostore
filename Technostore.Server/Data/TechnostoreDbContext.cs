@@ -29,6 +29,20 @@ namespace Technostore.Server.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
+                .Entity<Category>()
+                .HasOne(c => c.Author)
+                .WithMany(a => a.Categories)
+                .HasForeignKey(c => c.AuthorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder
+                .Entity<Product>()
+                .HasOne(p => p.Author)
+                .WithMany(a => a.Products)
+                .HasForeignKey(p => p.AuthorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder
                 .Entity<User>()
                 .HasMany(u => u.Order)
                 .WithOne(o => o.User)

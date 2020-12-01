@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Category\" />
     <Folder Include="Models\Order\" />
     <Folder Include="Models\Product\" />
   </ItemGroup>

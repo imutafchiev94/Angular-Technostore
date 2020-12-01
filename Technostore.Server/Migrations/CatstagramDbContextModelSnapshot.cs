@@ -157,6 +157,9 @@ namespace Technostore.Server.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<string>("AuthorId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("CategoryPicUrl")
                         .HasColumnType("nvarchar(max)");
 
@@ -167,6 +170,8 @@ namespace Technostore.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
 
                     b.ToTable("Categories");
                 });
@@ -221,6 +226,9 @@ namespace Technostore.Server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<string>("AuthorId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("BackCamera")
                         .HasColumnType("nvarchar(max)");
@@ -286,6 +294,8 @@ namespace Technostore.Server.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
 
                     b.HasIndex("CategoryId");
 
@@ -429,6 +439,16 @@ namespace Technostore.Server.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Technostore.Server.Data.Models.Category", b =>
+                {
+                    b.HasOne("Technostore.Server.Data.Models.User", "Author")
+                        .WithMany("Categories")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Author");
+                });
+
             modelBuilder.Entity("Technostore.Server.Data.Models.Order", b =>
                 {
                     b.HasOne("Technostore.Server.Data.Models.User", "User")
@@ -441,11 +461,18 @@ namespace Technostore.Server.Migrations
 
             modelBuilder.Entity("Technostore.Server.Data.Models.Product", b =>
                 {
+                    b.HasOne("Technostore.Server.Data.Models.User", "Author")
+                        .WithMany("Products")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Technostore.Server.Data.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Author");
 
                     b.Navigation("Category");
                 });
@@ -486,7 +513,11 @@ namespace Technostore.Server.Migrations
 
             modelBuilder.Entity("Technostore.Server.Data.Models.User", b =>
                 {
+                    b.Navigation("Categories");
+
                     b.Navigation("Order");
+
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

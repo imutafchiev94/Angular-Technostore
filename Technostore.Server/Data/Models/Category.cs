@@ -21,6 +21,10 @@ namespace Technostore.Server.Data.Models
 
         public string CategoryPicUrl { get; set; }
 
+        public string AuthorId { get; set; }
+
+        public User Author { get; set; }
+
         public ICollection<Product> Products { get; set; }
 
     }
