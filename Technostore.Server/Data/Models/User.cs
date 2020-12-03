@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
 namespace Technostore.Server.Data.Models
@@ -12,8 +13,10 @@ namespace Technostore.Server.Data.Models
             this.Products = new List<Product>();
         }
 
+        
         public string FirstName { get; set; }
 
+       
         public string LastName { get; set; }
 
         public ICollection<Category> Categories { get; set; }

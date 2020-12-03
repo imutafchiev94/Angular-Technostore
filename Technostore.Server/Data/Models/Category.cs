@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Technostore.Server.Data.Models
 {
@@ -13,14 +11,20 @@ namespace Technostore.Server.Data.Models
             Products = new List<Product>();
         }
 
+        [Required]
+        [Key]
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Slug { get; set; }
 
+        [Required]
         public string CategoryPicUrl { get; set; }
 
+        [Required]
         public string AuthorId { get; set; }
 
         public User Author { get; set; }

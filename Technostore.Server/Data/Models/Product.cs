@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Technostore.Server.Data.Models
 {
@@ -12,18 +10,25 @@ namespace Technostore.Server.Data.Models
             this.Order = new List<ProductOrder>();
         }
 
+        [Required]
+        [Key]
         public int Id { get; set; }
 
+        [Required]
         public string ModelName { get; set; }
 
+        [Required]
         public string Brand { get; set; }
 
+        [Required]
         public int CategoryId { get; set; }
 
         public Category Category { get; set; }
 
+        [Required]
         public string Slug { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
         public string CPUModel { get; set; }
@@ -32,6 +37,7 @@ namespace Technostore.Server.Data.Models
 
         public string Storage { get; set; }
 
+        [Required]
         public double Price { get; set; }
 
         public string VideoCardModel { get; set; }
@@ -58,6 +64,7 @@ namespace Technostore.Server.Data.Models
 
         public string Battery { get; set; }
 
+        [Required]
         public string AuthorId { get; set; }
 
         public User Author { get; set; }

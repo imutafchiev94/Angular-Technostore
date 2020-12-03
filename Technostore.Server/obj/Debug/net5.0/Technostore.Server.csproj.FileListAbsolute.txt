@@ -118,3 +118,7 @@ C:\Projects\Angular-Technostore\Technostore.Server\obj\Debug\net5.0\Technostore.
 C:\Projects\Angular-Technostore\Technostore.Server\obj\Debug\net5.0\ref\Technostore.Server.dll
 C:\Projects\Angular-Technostore\Technostore.Server\obj\Debug\net5.0\Technostore.Server.pdb
 C:\Projects\Angular-Technostore\Technostore.Server\obj\Debug\net5.0\Technostore.Server.genruntimeconfig.cache
+C:\Projects\Angular-Technostore\Technostore.Server\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Projects\Angular-Technostore\Technostore.Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Projects\Angular-Technostore\Technostore.Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Projects\Angular-Technostore\Technostore.Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
