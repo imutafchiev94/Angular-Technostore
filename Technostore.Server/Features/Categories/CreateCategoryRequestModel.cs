@@ -10,9 +10,6 @@ namespace Technostore.Server.Features.Categories
         public string Name { get; set; }
 
         [Required]
-        public string Slug { get; set; }
-
-        [Required]
         public string CategoryPicUrl { get; set; }
     }
 }

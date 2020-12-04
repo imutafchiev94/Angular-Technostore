@@ -14,8 +14,6 @@ export class CategoryService {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   create(data): Observable<Category> {
-    let headers = new HttpHeaders();
-      headers = headers.set('Authorization', `Bearer ${this.authService.getToken()}`);
-    return this.http.post<Category>(this.categoryPath, data, {headers});
+    return this.http.post<Category>(this.categoryPath, data);
   }
 }

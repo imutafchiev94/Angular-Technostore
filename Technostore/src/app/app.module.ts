@@ -7,10 +7,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './service/auth.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { CreateCategoryComponent } from './create-category/create-category.component';
 import { CategoryService } from './service/category.service';
 import { AuthGuardService } from './service/auth-guard.service';
+import { TokenInterceptorService } from './service/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,18 @@ import { AuthGuardService } from './service/auth-guard.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
-  providers: [AuthService, CategoryService, AuthGuardService ],
+  providers: [
+    AuthService, 
+    CategoryService, 
+    AuthGuardService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

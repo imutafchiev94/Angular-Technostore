@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Technostore.Server.Data;
 using Technostore.Server.Data.Models;
 
@@ -32,5 +33,30 @@ namespace Technostore.Server.Features.Categories
 
             return category.Id;
         }
+
+        public async Task<IEnumerable<CategoryListingResponseModel>> All()
+            => await this.data
+                .Categories
+                .Select(c => new CategoryListingResponseModel
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    CategoryPicUrl = c.CategoryPicUrl,
+                    AuthorId = ""
+                })
+                .ToListAsync();
+
+        public async Task<IEnumerable<CategoryListingResponseModel>> ByUser(string userId)
+            => await this.data
+                .Categories
+                .Where(c => c.AuthorId == userId)
+                .Select(c => new CategoryListingResponseModel
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    CategoryPicUrl = c.CategoryPicUrl,
+                    AuthorId = userId
+                })
+                .ToListAsync();
     }
 }

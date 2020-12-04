@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Technostore.Server.Infrastructure;
-
-namespace Technostore.Server.Features.Categories
+﻿namespace Technostore.Server.Features.Categories
 {
+    using Infrastructure;
+    using System.Collections.Generic;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Http;
+
     public class CategoriesController : ApiController
     {
 
@@ -15,6 +16,24 @@ namespace Technostore.Server.Features.Categories
         public CategoriesController(ICategoryService categoryService)
         {
             this.categoryService = categoryService;
+        }
+
+
+        //[Authorize]
+        //[HttpGet]
+        //[ProducesResponseType(StatusCodes.Status200OK)]
+        //public async Task<IEnumerable<CategoryListingResponseModel>> All()
+        //{
+        //    return await this.categoryService.All();
+        //}
+
+        [Authorize]
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IEnumerable<CategoryListingResponseModel>> Mine()
+        {
+            var userId = this.User.GetId();
+            return await this.categoryService.ByUser(userId);
         }
 
         [Authorize]
