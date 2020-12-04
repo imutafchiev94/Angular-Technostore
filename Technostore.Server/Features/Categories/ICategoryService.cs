@@ -7,6 +7,8 @@
     {
         Task<int> Create(string imageUrl, string name, string userId);
 
+        Task<bool> Update(int id, string imageUrl, string name, string userId);
+
         Task<IEnumerable<CategoryListingModel>> All();
 
         Task<CategoryDetailsModel> Details(int id);

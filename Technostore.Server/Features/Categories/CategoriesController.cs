@@ -1,5 +1,7 @@
 ﻿
 
+using Technostore.Server.Features.Identity.Models;
+
 namespace Technostore.Server.Features.Categories
 {
     using Models;
@@ -49,5 +51,20 @@ namespace Technostore.Server.Features.Categories
             return Created(nameof(this.Create), id);
         }
 
+
+        [HttpPut]
+        public async Task<ActionResult> Update(UpdateCategoryRequestModel model)
+        {
+            var userId = this.User.GetId();
+
+            var updated = await this.categoryService.Update(model.Id, model.CategoryPicUrl, model.Name, userId);
+
+            if (!updated)
+            {
+                return BadRequest();
+            }
+
+            return Ok();
+        }
     }
 }

@@ -37,6 +37,25 @@ namespace Technostore.Server.Features.Categories
             return category.Id;
         }
 
+        public async Task<bool> Update(int id, string imageUrl, string name, string userId)
+        {
+            var category = await this.data
+                .Categories.Where(c => c.Id == id && c.AuthorId == userId)
+                .FirstOrDefaultAsync();
+
+            if (category == null)
+            {
+                return false;
+            }
+
+            category.Name = name;
+            category.CategoryPicUrl = imageUrl;
+
+            await this.data.SaveChangesAsync();
+
+            return true;
+        }
+
         public async Task<IEnumerable<CategoryListingModel>> All()
             => await this.data
                 .Categories

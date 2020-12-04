@@ -7,5 +7,5 @@
     {
         public IEnumerable<ProductsListingResponseModel> Products { get; set; }
 
-    }
+    } 
 }
