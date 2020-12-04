@@ -1,6 +1,4 @@
-﻿
-
-namespace Technostore.Server.Features.Categories
+﻿namespace Technostore.Server.Features.Categories.Models
 {
     using System.ComponentModel.DataAnnotations;
 

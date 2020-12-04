@@ -1,7 +1,7 @@
-using System.ComponentModel.DataAnnotations;
-
-namespace Technostore.Server.Features.Identity
+namespace Technostore.Server.Features.Identity.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class RegisterUserRequestModel
     {
         [Required]
@@ -12,5 +12,8 @@ namespace Technostore.Server.Features.Identity
         
         [Required]
         public string Password { get; set; }
+
+        [Required]
+        public string Role { get; set; }
     }
 }

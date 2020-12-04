@@ -1,11 +1,15 @@
-﻿namespace Technostore.Server.Features.Categories
+﻿
+
+namespace Technostore.Server.Features.Categories
 {
-    using Infrastructure;
+    using Models;
+    using Infrastructure.Extensions;
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Http;
+
 
     public class CategoriesController : ApiController
     {
@@ -18,25 +22,22 @@
             this.categoryService = categoryService;
         }
 
-
-        //[Authorize]
-        //[HttpGet]
-        //[ProducesResponseType(StatusCodes.Status200OK)]
-        //public async Task<IEnumerable<CategoryListingResponseModel>> All()
-        //{
-        //    return await this.categoryService.All();
-        //}
-
-        [Authorize]
+        
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IEnumerable<CategoryListingResponseModel>> Mine()
+        public async Task<IEnumerable<CategoryListingModel>> All()
         {
-            var userId = this.User.GetId();
-            return await this.categoryService.ByUser(userId);
+            return await this.categoryService.All();
         }
 
-        [Authorize]
+        [HttpGet]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<CategoryDetailsModel>> Details(int id)
+            => await this.categoryService.Details(id);
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<ActionResult<int>> Create(CreateCategoryRequestModel model)

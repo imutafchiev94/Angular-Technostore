@@ -1,18 +1,20 @@
-﻿using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using Technostore.Server.Data;
-using Technostore.Server.Data.Models;
-using Technostore.Server.Features.Categories;
-using Technostore.Server.Features.Identity;
-
-namespace Technostore.Server.Infrastructure
+﻿namespace Technostore.Server.Infrastructure.Extensions
 {
+    using Data;
+    using Filters;
+    using Data.Models;
+    using Features.Categories;
+    using Features.Identity;
+    using System.Text;
+    using Microsoft.AspNetCore.Authentication.JwtBearer;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.IdentityModel.Tokens;
+    using Microsoft.OpenApi.Models;
+    
+
     public static class ServiceCollectionExtensions
     {
         public static IServiceCollection AddDatabase(
@@ -79,5 +81,8 @@ namespace Technostore.Server.Infrastructure
                         Version = "v1"
                     });
             });
+
+        public static void AddApiControllers(this IServiceCollection services)
+            => services.AddControllers(options => options.Filters.Add<ModelOrNotFoundActionFilter>());
     }
 }

@@ -1,4 +1,4 @@
-namespace Technostore.Server.Infrastructure
+namespace Technostore.Server.Infrastructure.Extensions
 {
     using Technostore.Server.Data;
     using Microsoft.AspNetCore.Builder;

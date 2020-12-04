@@ -1,19 +1,14 @@
 
 
-using Microsoft.AspNetCore.Http;
-
 namespace Technostore.Server.Features.Identity
 {
+    using Models;
+    using Data.Models;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
-    using Technostore.Server.Data.Models;
     using Microsoft.AspNetCore.Identity;
-    using System;
-    using System.IdentityModel.Tokens.Jwt;
-    using System.Security.Claims;
-    using System.Text;
     using Microsoft.Extensions.Options;
-    using Microsoft.IdentityModel.Tokens;
+    using Microsoft.AspNetCore.Http;
 
     public class IdentityController : ApiController
     {
@@ -21,6 +16,7 @@ namespace Technostore.Server.Features.Identity
         private readonly UserManager<User> userManager;
         private readonly IIdentityService identityService;
         private readonly AppSettings appSettings;
+
         
 
         public IdentityController(UserManager<User> userManager,
@@ -42,6 +38,7 @@ namespace Technostore.Server.Features.Identity
             {
                 Email = model.Email,
                 UserName = model.UserName,
+                Role = model.Role
             };
             var result = await userManager.CreateAsync(user, model.Password);
 
@@ -76,11 +73,20 @@ namespace Technostore.Server.Features.Identity
             var token = identityService.GenerateJwtToken(
                 user.Id, 
                 user.UserName, 
-                this.appSettings.Secret);
+                this.appSettings.Secret,
+                user.Role);
+
+            //var adminToken = "";
+
+            //if (user.Role == "Admin")
+            //{
+            //    adminToken =  identityService.GenerateAdminToken(user.Id, user.UserName, this.appSettings.Secret);
+            //}
 
             return new LoginResponseModel()
             {
-                Token = token
+                Token = token,
+                //AdminToken = adminToken
             };
         }
     }

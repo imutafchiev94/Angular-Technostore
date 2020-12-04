@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Technostore.Server.Data;
-using Technostore.Server.Data.Models;
+﻿
+using Technostore.Server.Features.Products;
 
 namespace Technostore.Server.Features.Categories
 {
+    using Data;
+    using Models;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.EntityFrameworkCore;
+    using Technostore.Server.Data.Models;
+    
     public class CategoryService : ICategoryService
     {
         private readonly TechnostoreDbContext data;
@@ -17,7 +20,7 @@ namespace Technostore.Server.Features.Categories
             this.data = data;
         }
 
-        public async Task<int> Create(string imageUrl, string name, string userId) 
+        public async Task<int> Create(string imageUrl, string name, string userId)
         {
             var category = new Category()
             {
@@ -34,29 +37,36 @@ namespace Technostore.Server.Features.Categories
             return category.Id;
         }
 
-        public async Task<IEnumerable<CategoryListingResponseModel>> All()
+        public async Task<IEnumerable<CategoryListingModel>> All()
             => await this.data
                 .Categories
-                .Select(c => new CategoryListingResponseModel
+                .Select(c => new CategoryListingModel()
                 {
                     Id = c.Id,
                     Name = c.Name,
-                    CategoryPicUrl = c.CategoryPicUrl,
-                    AuthorId = ""
+                    CategoryPicUrl = c.CategoryPicUrl
                 })
                 .ToListAsync();
 
-        public async Task<IEnumerable<CategoryListingResponseModel>> ByUser(string userId)
+        public async Task<CategoryDetailsModel> Details(int id)
             => await this.data
                 .Categories
-                .Where(c => c.AuthorId == userId)
-                .Select(c => new CategoryListingResponseModel
+                .Include(c => c.Products)
+                .Where(c => c.Id == id)
+                .Select(c => new CategoryDetailsModel
                 {
+                    Products = c.Products.Select(p => new ProductsListingResponseModel
+                    {
+                        Brand = p.Brand,
+                        CategoryId = c.Id,
+                        Id = p.Id,
+                        ModelName = p.ModelName,
+                        ProductImageUrl = p.ProductImageUrl
+                    }).ToList(),
                     Id = c.Id,
                     Name = c.Name,
-                    CategoryPicUrl = c.CategoryPicUrl,
-                    AuthorId = userId
+                    CategoryPicUrl = c.CategoryPicUrl
                 })
-                .ToListAsync();
+                .FirstOrDefaultAsync();
     }
 }

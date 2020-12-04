@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using System.Security.Claims;
-
-namespace Technostore.Server.Infrastructure
+﻿namespace Technostore.Server.Infrastructure.Extensions
 {
+    using System.Linq;
+    using System.Security.Claims;
+
     public static class IdentityExtensions
     {
         public static string GetId(this ClaimsPrincipal user)

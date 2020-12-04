@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.IdentityModel.Tokens;
-
-namespace Technostore.Server.Features.Identity
+﻿namespace Technostore.Server.Features.Identity
 {
+    using System;
+    using System.IdentityModel.Tokens.Jwt;
+    using System.Security.Claims;
+    using System.Text;
+    using Microsoft.IdentityModel.Tokens;
+
     public class IdentityService : IIdentityService
     {
-        public string GenerateJwtToken(string userId, string userName, string secret)
+        public string GenerateJwtToken(string userId, string userName, string secret, string userRole)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(secret);
@@ -20,7 +17,8 @@ namespace Technostore.Server.Features.Identity
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.NameIdentifier, userId),
-                    new Claim(ClaimTypes.Name, userName)
+                    new Claim(ClaimTypes.Name, userName),
+                    new Claim(ClaimTypes.Role, userRole)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -30,5 +28,26 @@ namespace Technostore.Server.Features.Identity
 
             return encriptedToken;
         }
+
+        //public string GenerateAdminToken(string userId, string userName, string secret)
+        //{
+        //    var tokenHandler = new JwtSecurityTokenHandler();
+        //    var key = Encoding.ASCII.GetBytes(secret);
+        //    var tokenDescriptor = new SecurityTokenDescriptor
+        //    {
+        //        Subject = new ClaimsIdentity(new Claim[]
+        //        {
+        //            new Claim(ClaimTypes.NameIdentifier, userId),
+        //            new Claim(ClaimTypes.Name, userName),
+        //            new Claim(ClaimTypes.Role, "Admin")
+        //        }),
+        //        Expires = DateTime.UtcNow.AddDays(7),
+        //        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        //    };
+        //    var token = tokenHandler.CreateToken(tokenDescriptor);
+        //    var encriptedToken = tokenHandler.WriteToken(token);
+
+        //    return encriptedToken;
+        //}
     }
 }

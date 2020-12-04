@@ -1,6 +1,11 @@
+
+
+
+using Technostore.Server.Infrastructure.Filters;
+
 namespace Technostore.Server
 {
-    using Infrastructure;
+    using Infrastructure.Extensions;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
@@ -26,7 +31,7 @@ namespace Technostore.Server
                     .AddJwtAuthentication(services.GeAppSettings(this.Configuration))
                     .AddApplicationServices()
                     .AddSwagger()
-                    .AddControllers();
+                    .AddApiControllers();
                 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
