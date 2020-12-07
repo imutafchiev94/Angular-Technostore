@@ -12,6 +12,7 @@ namespace Technostore.Server.Features.Categories
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Http;
 
+    using static Infrastructure.WebConstants;
 
     public class CategoriesController : ApiController
     {
@@ -33,7 +34,7 @@ namespace Technostore.Server.Features.Categories
         }
 
         [HttpGet]
-        [Route("{id}")]
+        [Route(Id)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<CategoryDetailsModel>> Details(int id)
@@ -53,6 +54,7 @@ namespace Technostore.Server.Features.Categories
 
 
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Update(UpdateCategoryRequestModel model)
         {
             var userId = this.User.GetId();
@@ -60,6 +62,23 @@ namespace Technostore.Server.Features.Categories
             var updated = await this.categoryService.Update(model.Id, model.CategoryPicUrl, model.Name, userId);
 
             if (!updated)
+            {
+                return BadRequest();
+            }
+
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Authorize(Roles = "Admin")]
+        [Route(Id)]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var userId = this.User.GetId();
+
+            var deleted = await this.categoryService.Delete(id, userId);
+
+            if (!deleted)
             {
                 return BadRequest();
             }

@@ -39,9 +39,7 @@ namespace Technostore.Server.Features.Categories
 
         public async Task<bool> Update(int id, string imageUrl, string name, string userId)
         {
-            var category = await this.data
-                .Categories.Where(c => c.Id == id && c.AuthorId == userId)
-                .FirstOrDefaultAsync();
+            var category = await CategoryById(id, userId);
 
             if (category == null)
             {
@@ -87,5 +85,27 @@ namespace Technostore.Server.Features.Categories
                     CategoryPicUrl = c.CategoryPicUrl
                 })
                 .FirstOrDefaultAsync();
+
+        public async Task<bool> Delete(int id, string userId)
+        {
+            var category = await CategoryById(id, userId);
+
+            if (category == null)
+            {
+                return false;
+            }
+
+
+            this.data.Categories.Remove(category);
+            await this.data.SaveChangesAsync();
+
+            return true;
+        }
+
+        private async Task<Category> CategoryById(int id, string userId) 
+            => await this.data
+                .Categories.Where(c => c.Id == id)
+                .FirstOrDefaultAsync();
+        
     }
 }

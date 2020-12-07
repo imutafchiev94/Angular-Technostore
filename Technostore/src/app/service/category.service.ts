@@ -16,4 +16,16 @@ export class CategoryService {
   create(data): Observable<Category> {
     return this.http.post<Category>(this.categoryPath, data);
   }
+
+  getCategories(): Observable<Array<Category>> {
+    return this.http.get<Array<Category>>(this.categoryPath);
+  }
+
+  getCategory(id): Observable<Category> {
+    return this.http.get<Category>(this.categoryPath + '/' + id);
+  }
+
+  deleteCategory(id) {
+    return this.http.delete(this.categoryPath + '/' + id)
+  }
 }

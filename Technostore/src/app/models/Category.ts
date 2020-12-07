@@ -1,6 +1,6 @@
 export interface Category {
     id: number;
-    Name: string;
-    Slug: string;
-    CategoryPicUrl: string;
+    name: string;
+    slug: string;
+    categoryPicUrl: string;
 }

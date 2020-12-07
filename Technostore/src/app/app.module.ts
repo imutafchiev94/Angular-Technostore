@@ -12,6 +12,8 @@ import { CreateCategoryComponent } from './create-category/create-category.compo
 import { CategoryService } from './service/category.service';
 import { AuthGuardService } from './service/auth-guard.service';
 import { TokenInterceptorService } from './service/token-interceptor.service';
+import { ListCategoriesComponent } from './list-categories/list-categories.component';
+import { DetailsCategoryComponent } from './details-category/details-category.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
     LoginComponent,
     RegisterComponent,
     CreateCategoryComponent,
+    ListCategoriesComponent,
+    DetailsCategoryComponent,
   ],
   imports: [
     BrowserModule,
