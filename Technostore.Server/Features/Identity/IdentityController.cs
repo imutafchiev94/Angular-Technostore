@@ -76,17 +76,19 @@ namespace Technostore.Server.Features.Identity
                 this.appSettings.Secret,
                 user.Role);
 
-            //var adminToken = "";
+            var adminToken = "";
 
-            //if (user.Role == "Admin")
-            //{
-            //    adminToken =  identityService.GenerateAdminToken(user.Id, user.UserName, this.appSettings.Secret);
-            //}
+            if (user.Role == "Admin")
+            {
+                adminToken = identityService.GenerateAdminToken(user.Id, user.UserName, this.appSettings.Secret);
+            }
+
+
 
             return new LoginResponseModel()
             {
                 Token = token,
-                //AdminToken = adminToken
+                AdminToken = adminToken
             };
         }
     }

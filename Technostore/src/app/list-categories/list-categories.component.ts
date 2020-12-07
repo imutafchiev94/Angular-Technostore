@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from '../models/Category';
+import { AuthService } from '../service/auth.service';
 import { CategoryService } from '../service/category.service';
 
 @Component({
@@ -11,12 +12,20 @@ import { CategoryService } from '../service/category.service';
 export class ListCategoriesComponent implements OnInit {
 
   categories: Array<Category>
-  constructor(private categoryService: CategoryService, private router: Router) { }
+  isAdmin: boolean;
+  constructor(
+    private categoryService: CategoryService,
+     private router: Router,
+      private authService: AuthService
+      ) { }
 
   ngOnInit() {
     this.fetchCategories();
+    this.isAdmin = this.authService.isAdmin();
   }
 
+
+  
   fetchCategories()
   {
     this.categoryService.getCategories().subscribe(categories => {
@@ -34,5 +43,9 @@ export class ListCategoriesComponent implements OnInit {
     this.categoryService.deleteCategory(id).subscribe(res => {
       this.fetchCategories();
     })
+  }
+
+  editCat(id) {
+    this.router.navigate([`categories/${id}/edit`]);
   }
 }

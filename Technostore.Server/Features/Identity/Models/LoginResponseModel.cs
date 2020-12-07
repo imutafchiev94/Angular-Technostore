@@ -4,6 +4,6 @@
     {
         public string Token { get; set; }
 
-        //public string AdminToken { get; set; }
+        public string AdminToken { get; set; }
     }
 }

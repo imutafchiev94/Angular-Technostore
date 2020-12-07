@@ -28,4 +28,8 @@ export class CategoryService {
   deleteCategory(id) {
     return this.http.delete(this.categoryPath + '/' + id)
   }
+
+  editCategory(data) {
+    return this.http.put(this.categoryPath, data)
+  }
 }

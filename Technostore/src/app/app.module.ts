@@ -14,6 +14,11 @@ import { AuthGuardService } from './service/auth-guard.service';
 import { TokenInterceptorService } from './service/token-interceptor.service';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
 import { DetailsCategoryComponent } from './details-category/details-category.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { AdminAuthGuardService } from './service/admin-auth-guard.service';
+import { ErrorInterceptorService } from './service/error-interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -23,22 +28,31 @@ import { DetailsCategoryComponent } from './details-category/details-category.co
     CreateCategoryComponent,
     ListCategoriesComponent,
     DetailsCategoryComponent,
+    EditCategoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule
   ],
   providers: [
     AuthService, 
     CategoryService, 
     AuthGuardService,
+    AdminAuthGuardService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
-    }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi:true
+    },
   ],
   bootstrap: [AppComponent]
 })

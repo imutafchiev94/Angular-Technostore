@@ -26,12 +26,32 @@ export class AuthService {
     localStorage.setItem('token', token);
   }
 
+  saveAdminToken(token) {
+    if(token !== "")
+    {
+        localStorage.setItem('adminToken', token);
+    }
+  }
+
+  getAdminToken() {
+    return localStorage.getItem('adminToken');
+  }
+
   getToken() {
     return localStorage.getItem('token');
   }
 
   isAuthenticated() {
     if(this.getToken()) {
+      return true;
+    }
+
+    return false;
+  }
+
+  isAdmin() {
+    if(this.getAdminToken())
+    {
       return true;
     }
 

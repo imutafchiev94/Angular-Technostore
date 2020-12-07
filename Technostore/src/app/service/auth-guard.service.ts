@@ -18,4 +18,14 @@ export class AuthGuardService implements CanActivate  {
       return false;
     }
   }
+
+  canActivateAdmin(): boolean {
+    if(this.authService.isAdmin())
+    {
+      return true;
+    } else {
+      this.router.navigate(["categories"]);
+      return false;
+    }
+  }
 }
