@@ -19,6 +19,10 @@ import { AdminAuthGuardService } from './service/admin-auth-guard.service';
 import { ErrorInterceptorService } from './service/error-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import {MaterialModule} from './material-modules';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,9 @@ import { ToastrModule } from 'ngx-toastr';
     ListCategoriesComponent,
     DetailsCategoryComponent,
     EditCategoryComponent,
+    NavBarComponent,
+    HomeComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,8 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule
+    ToastrModule.forRoot(),
+    MaterialModule
   ],
   providers: [
     AuthService, 

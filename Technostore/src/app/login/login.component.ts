@@ -21,6 +21,10 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    if(this.authService.isAuthenticated())
+    {
+      this.router.navigate(['categories']);
+    }
   }
 
   login()
@@ -30,8 +34,7 @@ export class LoginComponent implements OnInit {
       {
         this.authService.saveToken(data['token'])
         this.authService.saveAdminToken(data['adminToken'])
-        this.router.navigate(["categories"]);
-      })
+      });
   }
 
   get username() {

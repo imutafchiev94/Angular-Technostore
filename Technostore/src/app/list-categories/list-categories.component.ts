@@ -13,6 +13,7 @@ export class ListCategoriesComponent implements OnInit {
 
   categories: Array<Category>
   isAdmin: boolean;
+  displayedColumns: string[] = ['categoryPicUrl', 'name', 'actions'];
   constructor(
     private categoryService: CategoryService,
      private router: Router,

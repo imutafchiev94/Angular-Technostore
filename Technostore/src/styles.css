@@ -4,3 +4,5 @@ form {
     margin-top: 30%;
     border: 1px solid gray;
 }
+html, body { height: 100%; background-color: rgb(21, 42, 80); flex: 1 0 auto;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

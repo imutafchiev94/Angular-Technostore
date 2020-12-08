@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { isGeneratedFile } from '@angular/compiler/src/aot/util';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,8 @@ export class AuthService {
 
   saveToken(token) {
     localStorage.setItem('token', token);
+
+    document.location.reload();
   }
 
   saveAdminToken(token) {
@@ -39,6 +42,14 @@ export class AuthService {
 
   getToken() {
     return localStorage.getItem('token');
+  }
+
+  deleteToken() {
+    return localStorage.removeItem('token');
+  }
+
+  deleteAdminToken(){
+    return localStorage.removeItem('adminToken');
   }
 
   isAuthenticated() {
@@ -57,5 +68,5 @@ export class AuthService {
 
     return false;
   }
-  
+
 }

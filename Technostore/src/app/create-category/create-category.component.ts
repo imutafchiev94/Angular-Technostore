@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CategoryService } from '../service/category.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { CategoryService } from '../service/category.service';
 export class CreateCategoryComponent {
 
   categoryForm: FormGroup
-  constructor(private fb: FormBuilder, private categoryService: CategoryService) { 
+  constructor(private fb: FormBuilder, private categoryService: CategoryService, private router: Router) { 
     this.categoryForm = this.fb.group({
       "name": ['', Validators.required],
       "slug": ['', Validators.required],
@@ -32,7 +33,7 @@ export class CreateCategoryComponent {
 
   create() {
     this.categoryService.create(this.categoryForm.value).subscribe(res => {
-      console.log(res);
+      this.router.navigate(['categories']);
     })
   }
 }
