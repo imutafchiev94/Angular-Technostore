@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     if(this.authService.isAuthenticated())
     {
-      this.router.navigate(['categories']);
+      this.router.navigate(['home']);
     }
   }
 

@@ -243,8 +243,8 @@ namespace Technostore.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("BackCamera")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("BackCamera")
+                        .HasColumnType("float");
 
                     b.Property<string>("Battery")
                         .HasColumnType("nvarchar(max)");
@@ -263,11 +263,11 @@ namespace Technostore.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Display")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("Display")
+                        .HasColumnType("float");
 
-                    b.Property<string>("FrontCamera")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("FrontCamera")
+                        .HasColumnType("float");
 
                     b.Property<bool>("HDMI")
                         .HasColumnType("bit");
@@ -288,14 +288,17 @@ namespace Technostore.Server.Migrations
                     b.Property<string>("ProductImageUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RAM")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("RAM")
+                        .HasColumnType("int");
 
                     b.Property<string>("Slug")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Storage")
+                    b.Property<int>("Storage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StorageType")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("USB")
@@ -342,8 +345,20 @@ namespace Technostore.Server.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Avatar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")

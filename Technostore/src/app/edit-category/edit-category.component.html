@@ -2,15 +2,22 @@
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
-            <form [formGroup]="categoryForm">
-                <img [src]="category.categoryPicUrl" alt="">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
-                        formControlName="name">
-                    <small id="emailHelp1" class="form-text text-muted"></small>
+            <form [formGroup]="categoryForm" (ngSubmit)="editCategory()">
+
+                <p class="h4 mb-4 text-light">Edit Category</p>
+
+                <!-- Email -->
+                <input type="text"  class="form-control mb-4" formControlName="name" placeholder="category name">
+                <div *ngIf="name.touched && name.errors?.required" class="alert alert-danger">
+                  This field is required!
                 </div>
-                <button class="btn btn-primary" (click)="editCategory()">Save</button>
+                <img [src]="categoryPicUrl.value">
+                <input type="url"  class="form-control mb-4" formControlName="categoryPicUrl" placeholder="category pic url">
+                <div *ngIf="categoryPicUrl.touched && categoryPicUrl.errors?.required" class="alert alert-danger">
+                  This field is required!
+              </div>
+                <!-- Sign in button -->
+                <button type="submit" class="btn btn-info btn-block my-4" type="submit">Edit</button>
             </form>
         </div>
         <div class="col-lg-4"></div>

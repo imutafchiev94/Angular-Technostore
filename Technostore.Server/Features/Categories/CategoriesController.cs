@@ -1,8 +1,4 @@
-﻿
-
-using Technostore.Server.Features.Identity.Models;
-
-namespace Technostore.Server.Features.Categories
+﻿namespace Technostore.Server.Features.Categories
 {
     using Models;
     using Infrastructure.Extensions;
@@ -54,6 +50,7 @@ namespace Technostore.Server.Features.Categories
 
 
         [HttpPut]
+        [Route(Id)]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Update(UpdateCategoryRequestModel model)
         {

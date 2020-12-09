@@ -23,6 +23,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {MaterialModule} from './material-modules';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { DetailsProductComponent } from './details-product/details-product.component';
+import { ListProductsComponent } from './list-products/list-products.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { DetailsUserComponent } from './details-user/details-user.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +42,12 @@ import { FooterComponent } from './footer/footer.component';
     NavBarComponent,
     HomeComponent,
     FooterComponent,
+    CreateProductComponent,
+    EditProductComponent,
+    DetailsProductComponent,
+    ListProductsComponent,
+    EditUserComponent,
+    DetailsUserComponent,
   ],
   imports: [
     BrowserModule,

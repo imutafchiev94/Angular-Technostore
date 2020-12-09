@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Technostore.Server.Features.Identity.Models
+namespace Technostore.Server.Features.Categories.Models
 {
     public class UpdateCategoryRequestModel
     {

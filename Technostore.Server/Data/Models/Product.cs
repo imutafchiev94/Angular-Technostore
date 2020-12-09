@@ -33,9 +33,11 @@ namespace Technostore.Server.Data.Models
 
         public string CPUModel { get; set; }
 
-        public string RAM { get; set; }
+        public int RAM { get; set; }
 
-        public string Storage { get; set; }
+        public string StorageType { get; set; }
+
+        public int Storage { get; set; }
 
         [Required]
         public double Price { get; set; }
@@ -48,11 +50,11 @@ namespace Technostore.Server.Data.Models
 
         public string OS { get; set; }
 
-        public string FrontCamera { get; set; }
+        public double FrontCamera { get; set; }
 
-        public string BackCamera { get; set; }
+        public double BackCamera { get; set; }
 
-        public string Display { get; set; }
+        public double Display { get; set; }
 
         public double Weight { get; set; }
 

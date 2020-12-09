@@ -47,7 +47,8 @@ namespace Technostore.Server.Features.Categories
             }
 
             category.Name = name;
-            //category.CategoryPicUrl = imageUrl;
+            category.Slug = name.ToLower().Replace(' ', '-');
+            category.CategoryPicUrl = imageUrl;
 
             await this.data.SaveChangesAsync();
 

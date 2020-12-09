@@ -2,7 +2,7 @@
     margin: 10%;
     width: 400px;
     height: 400px;
-    background-color: darkgrey;
+    background-color: #708090;
 
   }
   mat-card-header {
@@ -14,7 +14,7 @@
       margin-left: 25%;
       width: 150px;
       height: 150px;
-      background-color: darkgray;
+      background-color: #708090;
   }
 
   mat-card-title {

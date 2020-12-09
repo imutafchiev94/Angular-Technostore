@@ -13,10 +13,10 @@
             bred for hunting.
           </p>
         </mat-card-content>
-        <mat-card-actions>
-          <a routerLink="/categories/{{category.id}}" class="btn btn-primary">See products</a>
-          <button mat-button *ngIf="isAdmin" class="btn btn-warning" (click)="editCat(category.id)">Edit</button>
-          <button mat-button *ngIf="isAdmin" class="btn btn-danger" (click)="deleteCat(category.id)">Delete</button>
+        <mat-card-actions class="m-4">
+          <a routerLink="/categories/{{category.id}}" class="btn btn-primary m-2">See products</a>
+          <button  *ngIf="isAdmin" class="btn btn-warning m-2" (click)="editCat(category.id)">Edit</button>
+          <button  *ngIf="isAdmin" class="btn btn-danger m-2" (click)="deleteCat(category.id)">Delete</button>
         </mat-card-actions>
       </mat-card>
     </div>

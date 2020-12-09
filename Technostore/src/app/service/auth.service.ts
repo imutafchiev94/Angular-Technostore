@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import { Observable } from 'rxjs';
+import {User} from '../models/User';
 import { isGeneratedFile } from '@angular/compiler/src/aot/util';
 import { Router } from '@angular/router';
 
@@ -10,8 +11,10 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  loginPath = environment.apiUrl + 'identity/login';
-  registerPath = environment.apiUrl + 'identity/register'
+  loginPath = environment.apiUrl + 'identity/login';;
+  registerPath = environment.apiUrl + 'identity/register';
+  editPath = environment.apiUrl + 'identity/update';
+  detialsPath = environment.apiUrl + 'identity/details';
 
   constructor(private http: HttpClient) { }
 
@@ -67,6 +70,18 @@ export class AuthService {
     }
 
     return false;
+  }
+
+  editUser(data){
+
+    return this.http.put(this.editPath, data);
+
+  }
+
+  getUser(): Observable<User> {
+
+    return this.http.get<User>(this.detialsPath)
+
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from '../models/Category';
+import { User } from '../models/User';
 import { AuthService } from '../service/auth.service';
 import { CategoryService } from '../service/category.service';
 
@@ -15,6 +16,8 @@ export class NavBarComponent implements OnInit {
   categories: Array<Category>;
   isAuthenticated: boolean;
   isAdmin:boolean;
+  userName: string;
+  user: User;
 
   constructor(private categoryService: CategoryService, private authService: AuthService, private router: Router) { }
   
@@ -22,7 +25,7 @@ export class NavBarComponent implements OnInit {
     this.fetchCategories();
     this.isAuthenticated = this.authService.isAuthenticated();
     this.isAdmin = this.authService.isAdmin();
-    
+    this.fetchUsers();
   }
 
   fetchCategories()
@@ -31,6 +34,14 @@ export class NavBarComponent implements OnInit {
       this.categories = categories;
       console.log(this.categories);
     })
+  }
+
+  fetchUsers() {
+    this.authService.getUser().subscribe(user => {
+      this.user = user;
+      this.userName = this.user['userName'];
+      console.log(user['userName'])
+    });
   }
 
   Logout()

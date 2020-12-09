@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from '../models/Category';
 import { AuthService } from '../service/auth.service';
@@ -25,7 +25,8 @@ export class EditCategoryComponent implements OnInit {
     {
       this.categoryForm = this.fb.group({
         'id': [''],
-        'name': [''], 
+        'name': ['', Validators.required], 
+        'categoryPicUrl': ['', Validators.required]
       })
      }
 
@@ -37,6 +38,7 @@ export class EditCategoryComponent implements OnInit {
         this.categoryForm = this.fb.group({
           'id': [this.category.id],
           'name': [this.category.name], 
+          'categoryPicUrl': [this.category.categoryPicUrl],
         })
       })
     })
@@ -48,8 +50,16 @@ export class EditCategoryComponent implements OnInit {
   editCategory()
   {
     this.categoryService.editCategory(this.categoryForm.value).subscribe(res => {
-      this.router.navigate(['categories'])
+      this.router.navigate(['home'])
     });
+  }
+
+  get name() {
+      return this.categoryForm.get('name');
+  }
+
+  get categoryPicUrl() {
+    return this.categoryForm.get('categoryPicUrl');
   }
 
 }

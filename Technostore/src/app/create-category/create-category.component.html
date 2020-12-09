@@ -12,6 +12,7 @@
                   This field is required!
                 </div>
                 
+                <img [src]="categoryPicUrl.value">
                 <input type="url"  class="form-control mb-4" formControlName="categoryPicUrl" placeholder="category pic url">
                 <div *ngIf="categoryPicUrl.touched && categoryPicUrl.errors?.required" class="alert alert-danger">
                   This field is required!

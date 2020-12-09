@@ -1,5 +1,8 @@
 
 
+using Microsoft.AspNetCore.Authorization;
+using Technostore.Server.Infrastructure.Extensions;
+
 namespace Technostore.Server.Features.Identity
 {
     using Models;
@@ -90,6 +93,36 @@ namespace Technostore.Server.Features.Identity
                 Token = token,
                 AdminToken = adminToken
             };
+        }
+
+        [HttpGet]
+        [Route(nameof(Details))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<UserDetailsModel>> Details()
+        {
+            var id = this.User.GetId();
+
+            var user = await this.identityService.GetUser(id);
+
+            return user;
+        } 
+
+        [HttpPut]
+        [Route(nameof(Update))]
+        [Authorize]
+        public async Task<ActionResult> Update(UpdateUserRequestModel model)
+        {
+            var userId = this.User.GetId();
+
+            var updated = await this.identityService.EditUser(userId, model.FirstName, model.LastName,
+                model.City, model.Address, model.Country, model.Avatar);
+
+            if (!updated)
+            {
+                return BadRequest();
+            }
+
+            return Ok();
         }
     }
 }
