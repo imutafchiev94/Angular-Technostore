@@ -30,6 +30,7 @@ namespace Technostore.Server.Features.Products
             {
                 AuthorId = userId,
                 ModelName = modelName,
+                Slug = modelName.ToLower().Replace(' ', '-'),
                 Brand = brand,
                 CategoryId = categoryId,
                 Description = description,
@@ -73,6 +74,7 @@ namespace Technostore.Server.Features.Products
 
             product.ModelName = modelName;
             product.Brand = brand;
+            product.Slug = modelName.ToLower().Replace(' ', '-');
             product.CategoryId = categoryId;
             product.Description = description;
             product.CPUModel = cpuModel;

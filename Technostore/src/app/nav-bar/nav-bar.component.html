@@ -19,13 +19,16 @@
         </li>
         </ul>
       </li>
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="/products/create">Create product</a>
+      </li>
       <li class="nav-item" *ngIf="isAdmin">
-        <a class="nav-link" routerLink="/createcategory">Create category</a>
+        <a class="nav-link" routerLink="/categories/create">Create category</a>
       </li>
     </ul>
     <ng-template [ngIf]="isAuthenticated" [ngIfElse]="elseBlock">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link btn btn-link" routerLink="/user/detials">{{userName}}</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-link" routerLink="/user/details">{{userName}}</a></li>
         <li class="nav-item"><button class="nav-link btn btn-link " (click)="Logout()">Logout</button></li>
         
     </ul>

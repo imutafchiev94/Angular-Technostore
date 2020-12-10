@@ -1,1 +1,20 @@
-<p>details-user works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <img [src]="user.avatar">
+        </div>
+        <div class="col-lg-7">
+            <h2 class="text-light">{{user.userName}}</h2>
+            <h4 class="text-light">Name: <span class="text-light h3">{{user.name}}</span></h4>
+            <h4 class="text-light">Country: <span class="text-light h3">{{user.country}}</span></h4>
+            <h4 class="text-light">City: <span class="text-light h3">{{user.city}}</span></h4>
+            <h4 class="text-light">Address: <span class="text-light h3">{{user.address}}</span></h4>
+
+            <br>
+            <br>
+
+            <button mat-raised-button (click)="edit()">Edit</button>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>

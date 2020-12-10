@@ -14,6 +14,21 @@ namespace Technostore.Server.Features.Identity.Models
         public string Password { get; set; }
 
         [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string Country { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required]
+        public string Address { get; set; }
+
+        [Required]
+        public string Avatar { get; set; }
+
+        [Required]
         public string Role { get; set; }
     }
 }

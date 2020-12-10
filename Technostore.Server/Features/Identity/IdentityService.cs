@@ -69,8 +69,7 @@ namespace Technostore.Server.Features.Identity
                 .Select(c => new UserDetailsModel
             {
                 UserName = c.UserName,
-                FirstName = c.FirstName,
-                LastName = c.LastName,
+                Name = c.Name,
                 City = c.City,
                 Country = c.Country,
                 Address = c.Address,
@@ -78,7 +77,7 @@ namespace Technostore.Server.Features.Identity
                 Id = c.Id
             }).FirstOrDefaultAsync();
 
-        public async Task<bool> EditUser(string userId, string firstName, string lastName, string city, string address, string country,
+        public async Task<bool> EditUser(string userId, string name, string city, string address, string country,
             string avatar)
         {
             var user = await this.data.Users.FirstOrDefaultAsync(u => u.Id == userId);
@@ -88,8 +87,7 @@ namespace Technostore.Server.Features.Identity
                 return false;
             }
 
-            user.FirstName = firstName;
-            user.LastName = lastName;
+            user.Name = name;
             user.City = city;
             user.Country = country;
             user.Address = address;

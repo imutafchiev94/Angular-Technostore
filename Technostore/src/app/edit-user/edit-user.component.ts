@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { mergeMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { User } from '../models/User';
 import { AuthService } from '../service/auth.service';
 
@@ -18,35 +17,33 @@ export class EditUserComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private router: Router,
     private authService: AuthService) {
-       authService.getUser().subscribe(res => {
-        this.user = res;
-      this.userForm = this.fb.group({
-        'firstName': [this.user.firstName, Validators.required],
-        'lastName': [this.user.lastName, Validators.required],
-        'address': [this.user.address, Validators.required],
-        'city': [this.user.city, Validators.required],
-        'country': [this.user.country, Validators.required],
-        'avatar': [this.user.avatar, Validators.required],
-     })
-    })
+      
     }
 
   ngOnInit(): void {
-    
+    this.authService.getUser().subscribe(res => {
+      this.user = res;
+      console.log(this.user);
+    this.userForm = this.fb.group({
+      'name': ['', Validators.required],
+      'address': ['', Validators.required],
+      'city': ['', Validators.required],
+      'country': ['', Validators.required],
+      'avatar': ['', Validators.required],
+   })
+  })
   }
 
   edit() {
     return this.authService.editUser(this.userForm.value).subscribe(res => {
+      console.log(this.userForm.value);
       this.router.navigate(['user/details']);
     })
   }
 
-  get firstName() {
-    return this.userForm.get('firstName');
-  }
 
-  get lastName() {
-    return this.userForm.get('lastName');
+  get name() {
+    return this.userForm.get('name');
   }
 
   get address() {
@@ -57,7 +54,7 @@ export class EditUserComponent implements OnInit {
     return this.userForm.get('city');
   }
 
-  get contry() {
+  get country() {
     return this.userForm.get('contry');
   }
 

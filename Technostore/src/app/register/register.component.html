@@ -17,6 +17,29 @@
               <div *ngIf="password.touched && password.errors?.required" class="alert alert-danger">
                 This field is required!
             </div>
+            <input type="text"  class="form-control mb-4" formControlName="name" placeholder="name">
+              <div *ngIf="name.touched && name.errors?.required" class="alert alert-danger">
+                This field is required!
+              </div>
+              <input type="text"  class="form-control mb-4" formControlName="country" placeholder="country">
+              <div *ngIf="country.touched && country.errors?.required" class="alert alert-danger">
+                This field is required!
+              </div>
+              <!-- Password -->
+              <input type="text"  class="form-control mb-4" formControlName="city" placeholder="city">
+              <div *ngIf="city.touched && city.errors?.required" class="alert alert-danger">
+                This field is required!
+              </div>
+              <input type="text"  class="form-control mb-4" formControlName="address" placeholder="address">
+              <div *ngIf="address.touched && address.errors?.required" class="alert alert-danger">
+                This field is required!
+              </div>
+
+              <img [src]="avatar.value">
+              <input type="url"  class="form-control mb-4" formControlName="avatar" placeholder="avatar">
+              <div *ngIf="avatar.touched && avatar.errors?.required" class="alert alert-danger">
+                This field is required!
+              </div>
               <!-- Sign in button -->
               <button type="submit" class="btn btn-info btn-block my-4" type="submit">Register</button>
             

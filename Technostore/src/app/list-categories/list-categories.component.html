@@ -3,20 +3,17 @@
     <div class="col-lg-3" *ngFor="let category of categories">
       <mat-card class="example-card">
         <mat-card-header>
-          <mat-card-title>{{category.name}}</mat-card-title>
+          <img mat-card-image [src]="category.categoryPicUrl" alt="Photo of a Shiba Inu">
         </mat-card-header>
-        <img mat-card-image [src]="category.categoryPicUrl" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
+        
+        <mat-card-content class="text-center">
+          <mat-card-title>{{category.name}}</mat-card-title>
+          <h2>{{category.id}}</h2>
         </mat-card-content>
         <mat-card-actions class="m-4">
           <a routerLink="/categories/{{category.id}}" class="btn btn-primary m-2">See products</a>
-          <button  *ngIf="isAdmin" class="btn btn-warning m-2" (click)="editCat(category.id)">Edit</button>
-          <button  *ngIf="isAdmin" class="btn btn-danger m-2" (click)="deleteCat(category.id)">Delete</button>
+          <button  *ngIf="isAdmin" class="btn btn-warning m-2" (click)="editCategory(category.id)">Edit</button>
+          <button  *ngIf="isAdmin" class="btn btn-danger m-2" (click)="deleteCategory(category.id)">Delete</button>
         </mat-card-actions>
       </mat-card>
     </div>

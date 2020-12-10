@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Technostore.Server.Features.Identity;
@@ -28,8 +29,6 @@ namespace Technostore.Server.Features.Products
             => await this.productService.Details(id);
 
         [HttpPost]
-        [Route(nameof(Create))]
-        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<ActionResult<int>> Create(CreateProductRequestModel model)
         {
@@ -44,8 +43,8 @@ namespace Technostore.Server.Features.Products
         }
 
         [HttpPut]
-        [Route(nameof(Update))]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
+        [Route(Id)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult> Update(UpdateProductRequestModel model)
@@ -68,7 +67,7 @@ namespace Technostore.Server.Features.Products
 
         [HttpDelete]
         [Route(Id)]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult> Delete(int id)

@@ -33,7 +33,7 @@ export class CreateCategoryComponent {
 
   create() {
     this.categoryService.create(this.categoryForm.value).subscribe(res => {
-      this.router.navigate(['categories']);
+      this.router.navigate(['home']);
     })
   }
 }

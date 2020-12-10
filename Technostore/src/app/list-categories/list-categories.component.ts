@@ -39,14 +39,14 @@ export class ListCategoriesComponent implements OnInit {
     this.router.navigate(["categories", id])
   }
 
-  deleteCat(id) {
+  deleteCategory(id) {
     console.log("Delete")
     this.categoryService.deleteCategory(id).subscribe(res => {
       this.fetchCategories();
     })
   }
 
-  editCat(id) {
+  editCategory(id) {
     this.router.navigate([`categories/${id}/edit`]);
   }
 }

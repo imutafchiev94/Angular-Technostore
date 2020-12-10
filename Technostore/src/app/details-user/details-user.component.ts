@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../models/User';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-details-user',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsUserComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+
+  constructor(private authService: AuthService, private router: Router) { 
+    this.fetchData();
+  }
 
   ngOnInit(): void {
+
+  }
+
+  fetchData() {
+    this.authService.getUser().subscribe(res => {
+      this.user = res;
+    })
+  }
+
+  edit() {
+    this.router.navigate(['user/edit/']);
   }
 
 }

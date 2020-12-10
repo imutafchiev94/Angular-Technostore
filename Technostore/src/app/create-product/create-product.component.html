@@ -1,1 +1,46 @@
-<p>create-product works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <form [formGroup]="productForm" (ngSubmit)='create()'>
+              
+                <p class="h4 mb-4 text-light">Create Product</p>
+  
+                
+                <input type="text" class="form-control mb-4" formControlName="modelName" placeholder="model name">
+                <div *ngIf="modelName.touched && modelName.errors?.required" class="alert alert-danger">
+                  This field is required!
+                </div>
+                <input type="text" class="form-control mb-4" formControlName="brand" placeholder="brand">
+                <div *ngIf="brand.touched && brand.errors?.required" class="alert alert-danger">
+                  This field is required!
+                </div>
+                <label>Category</label>
+                <select class="browser-default custom-select mb-4" formControlName="categoryId" >
+                    <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+                </select>
+                <div class="form-group">
+                    <textarea class="form-control rounded-0" formControlName="description" rows="3" placeholder="description"></textarea>
+                </div>
+                <div *ngIf="description.touched && description.errors?.required" class="alert alert-danger">
+                    This field is required!
+                </div>
+
+                <input type="number" class="form-control mb-4" formControlName="price" placeholder="price">
+                <div *ngIf="price.touched && price.errors?.required" class="alert alert-danger">
+                  This field is required!
+                </div>
+
+                <img [src]="productImageUrl.value">
+                <input type="url" class="form-control mb-4" formControlName="productImageUrl" placeholder="product image url">
+                <div *ngIf="productImageUrl.touched && productImageUrl.errors?.required" class="alert alert-danger">
+                  This field is required!
+                </div>
+
+                <button type="submit" class="btn btn-info btn-block my-4" type="submit">Create</button>
+            
+              </form>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>

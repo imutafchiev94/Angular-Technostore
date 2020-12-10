@@ -3,21 +3,22 @@ import { Category } from './Category';
 export interface Product {
     id: number;
     modelName: string;
-    brand:string;
+    brand: string;
+    description: string;
     categoryId: number;
-    category: Category;
-    slug:string;
-    cpuModel:string;
-    ram:string;
-    storage:string;
+    categoryName: string;
+    slug: string;
+    cpuModel: string;
+    ram: number;
+    storage: number;
     price: number;
     videoCardModel: string;
     videoCardMemory: number;
     productImageUrl: string;
     os: string;
-    frontCamera: string;
-    backCamera: string;
-    display: string
+    frontCamera: number;
+    backCamera: number;
+    display: number
     weight: number;
     usb: string;
     ports: string;

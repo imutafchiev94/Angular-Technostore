@@ -1,1 +1,21 @@
-<p>details-product works!</p>
+<div class="container-fluid">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-3">
+            <img [src]="product.productImageUrl">
+        </div>
+        <div class="col-lg-7">
+            <h2 class="text-light">{{product.modelName}}</h2>
+            <h4 class="text-light">Brand: <span class="text-light h4"> {{product.brand}}</span></h4>
+            <h4 class="text-light">Category: <span class="text-light h4"> {{product.categoryName}}</span></h4>
+            <h4 class="text-light">Description: <span class="text-light h4"> {{product.description}}</span></h4>
+            <h4 class="text-light">Price: <span class="text-light h4"> {{product.price}} $</span></h4>
+            <br>
+            <br>
+
+            <button mat-raised-button class="btn-warning" (click)="edit(product.id)">Edit</button>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>

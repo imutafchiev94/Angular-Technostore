@@ -41,6 +41,11 @@ namespace Technostore.Server.Features.Identity
             {
                 Email = model.Email,
                 UserName = model.UserName,
+                Name = model.Name,
+                Country = model.Country,
+                City = model.City,
+                Address = model.Address,
+                Avatar = model.Avatar,
                 Role = model.Role
             };
             var result = await userManager.CreateAsync(user, model.Password);
@@ -114,7 +119,7 @@ namespace Technostore.Server.Features.Identity
         {
             var userId = this.User.GetId();
 
-            var updated = await this.identityService.EditUser(userId, model.FirstName, model.LastName,
+            var updated = await this.identityService.EditUser(userId, model.Name,
                 model.City, model.Address, model.Country, model.Avatar);
 
             if (!updated)

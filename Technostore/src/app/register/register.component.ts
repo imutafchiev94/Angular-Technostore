@@ -16,7 +16,13 @@ export class RegisterComponent implements OnInit {
     this.registerForm = fb.group({
       'username': ['', [Validators.required]],
       'email': ['', [Validators.required]],
-      'password': ['', [Validators.required]]
+      'password': ['', [Validators.required]],
+      'name': ['', Validators.required],
+      'country': ['', Validators.required],
+      'city': ['', Validators.required],
+      'address': ['', Validators.required],
+      'avatar': ['', Validators.required],
+      'role': ['User'],
     })
    }
 
@@ -42,5 +48,26 @@ export class RegisterComponent implements OnInit {
   get password() {
     return this.registerForm.get('password');
   }
+
+  get name() {
+    return this.registerForm.get('name');
+  }
+
+  get country() {
+    return this.registerForm.get('country');
+  }
+
+  get city() {
+    return this.registerForm.get('city');
+  }
+
+  get address() {
+    return this.registerForm.get('address');
+  }
+
+  get avatar() {
+    return this.registerForm.get('avatar');
+  }
+
 
 }

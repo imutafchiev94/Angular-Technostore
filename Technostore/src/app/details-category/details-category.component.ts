@@ -29,6 +29,8 @@ export class DetailsCategoryComponent implements OnInit {
       return id
     }), mergeMap(id => this.categoryService.getCategory(id))).subscribe(res => {
       this.category = res;
+
+      console.log(res);
     })
   }
 

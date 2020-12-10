@@ -13,7 +13,7 @@ namespace Technostore.Server.Features.Identity
 
         Task<UserDetailsModel> GetUser(string userId);
 
-        Task<bool> EditUser(string userId, string firstName, string lastName,
+        Task<bool> EditUser(string userId, string name,
             string city, string address, string country, string avatar);
 
         Task<bool> IsAdmin(string userId);

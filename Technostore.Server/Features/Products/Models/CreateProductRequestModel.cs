@@ -12,7 +12,6 @@ namespace Technostore.Server.Features.Products
         [Required]
         public string Brand { get; set; }
 
-        [Required]
         public string Slug { get; set; }
 
         [Required]
