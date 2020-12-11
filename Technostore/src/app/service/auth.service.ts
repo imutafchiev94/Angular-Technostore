@@ -80,6 +80,7 @@ export class AuthService {
 
   getUser(): Observable<User> {
 
+    console.log(this.getToken());
     return this.http.get<User>(this.detialsPath)
 
   }

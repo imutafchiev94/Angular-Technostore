@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "eNcJ2vfFJ+efQFR7u3zKwpNItWN1SdD+fK64wOB6bpxE4X0JmmUSDB66EejIPR06xwLYAMx9fWAackeiqTQ+pA==",
+  "dgSpecHash": "Fbx7B1TXvFVyQjoarXPyYjalRDnc+Nr1xdymOacYTmVhBe1leMotbAV0MX2soEuqqF5dk7FzMcexncRmH9+5lw==",
   "success": true,
   "projectFilePath": "C:\\Projects\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.0\\microsoft.aspnetcore.authentication.jwtbearer.5.0.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.1\\microsoft.aspnetcore.authentication.jwtbearer.5.0.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.0\\microsoft.aspnetcore.cryptography.keyderivation.5.0.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.0\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.0.nupkg.sha512",

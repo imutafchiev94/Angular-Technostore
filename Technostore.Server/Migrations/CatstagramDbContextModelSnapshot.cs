@@ -207,15 +207,12 @@ namespace Technostore.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PostalCode")
@@ -240,7 +237,6 @@ namespace Technostore.Server.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("AuthorId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<double>("BackCamera")
@@ -498,8 +494,7 @@ namespace Technostore.Server.Migrations
                     b.HasOne("Technostore.Server.Data.Models.User", "Author")
                         .WithMany("Products")
                         .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Technostore.Server.Data.Models.Category", "Category")
                         .WithMany("Products")

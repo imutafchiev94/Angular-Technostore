@@ -14,7 +14,8 @@
             <br>
             <br>
 
-            <button mat-raised-button class="btn-warning" (click)="edit(product.id)">Edit</button>
+            <button mat-raised-button *ngIf="isAuthenticated" class="btn-primary" (click)="order(id)">Order</button>
+            <button mat-raised-button *ngIf="isAdmin" class="btn-warning" (click)="edit(id)">Edit</button>
         </div>
         <div class="col-lg-2"></div>
     </div>

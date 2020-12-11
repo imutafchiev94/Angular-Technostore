@@ -15,7 +15,7 @@
                 <div *ngIf="brand.touched && brand.errors?.required" class="alert alert-danger">
                   This field is required!
                 </div>
-                <label>Category</label>
+                <label class="text-light">Category</label>
                 <select class="browser-default custom-select mb-4" formControlName="categoryId" >
                     <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
                 </select>

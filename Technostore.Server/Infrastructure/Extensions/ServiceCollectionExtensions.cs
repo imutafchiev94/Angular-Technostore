@@ -1,4 +1,5 @@
-﻿using Technostore.Server.Features.Products;
+﻿using Technostore.Server.Features.Orders;
+using Technostore.Server.Features.Products;
 
 namespace Technostore.Server.Infrastructure.Extensions
 {
@@ -70,7 +71,8 @@ namespace Technostore.Server.Infrastructure.Extensions
         =>
             services.AddTransient<IIdentityService, IdentityService>()
                     .AddTransient<ICategoryService, CategoryService>()
-                    .AddTransient<IProductService, ProductService>();
+                    .AddTransient<IProductService, ProductService>()
+                    .AddTransient<IOrderService, OrderService>();
 
         public static IServiceCollection AddSwagger(this IServiceCollection services)
         =>

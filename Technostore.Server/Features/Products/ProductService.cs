@@ -53,7 +53,7 @@ namespace Technostore.Server.Features.Products
                 Battery = battery
             };
 
-            this.data.Products.Add(product);
+            await this.data.Products.AddAsync(product);
 
             await this.data.SaveChangesAsync();
 

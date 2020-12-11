@@ -11,7 +11,6 @@ namespace Technostore.Server.Data.Models
             this.Product = new List<ProductOrder>();
         }
 
-        [Required]
         [Key]
         public int Id { get; set; }
 
@@ -23,13 +22,10 @@ namespace Technostore.Server.Data.Models
 
         public User User { get; set; }
 
-        [Required]
         public string FirstName { get; set; }
 
-        [Required]
         public string LastName { get; set; }
 
-        [Required]
         public string PhoneNumber { get; set; }
 
         [Required]
@@ -44,7 +40,7 @@ namespace Technostore.Server.Data.Models
         [Required]
         public string Country { get; set; }
 
-        [Required]
+
         public int PostalCode { get; set; }
 
         public ICollection<ProductOrder> Product { get; set; }

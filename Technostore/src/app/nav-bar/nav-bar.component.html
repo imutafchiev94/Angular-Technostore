@@ -29,6 +29,7 @@
     <ng-template [ngIf]="isAuthenticated" [ngIfElse]="elseBlock">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a class="nav-link btn btn-link" routerLink="/user/details">{{userName}}</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-link" routerLink="/order/details"><mat-icon matBadge="0" matBadgeColor="warn">shopping_cart</mat-icon></a></li>
         <li class="nav-item"><button class="nav-link btn btn-link " (click)="Logout()">Logout</button></li>
         
     </ul>

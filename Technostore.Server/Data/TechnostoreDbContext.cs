@@ -25,29 +25,29 @@ namespace Technostore.Server.Data
                 .Entity<Category>()
                 .HasMany(c => c.Products)
                 .WithOne(p => p.Category)
-                .HasForeignKey(p => p.CategoryId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(p => p.CategoryId);
+                
 
             builder
                 .Entity<Category>()
                 .HasOne(c => c.Author)
                 .WithMany(a => a.Categories)
-                .HasForeignKey(c => c.AuthorId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(c => c.AuthorId);
+                
 
             builder
                 .Entity<Product>()
                 .HasOne(p => p.Author)
                 .WithMany(a => a.Products)
-                .HasForeignKey(p => p.AuthorId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(p => p.AuthorId);
+
 
             builder
                 .Entity<User>()
                 .HasMany(u => u.Order)
                 .WithOne(o => o.User)
-                .HasForeignKey(o => o.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(o => o.UserId);
+                
 
             builder.Entity<ProductOrder>()
                 .HasKey(po => new {po.OrderId, po.ProductId});

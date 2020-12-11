@@ -66,7 +66,7 @@ namespace Technostore.Server.Data.Models
 
         public string Battery { get; set; }
 
-        [Required]
+        
         public string AuthorId { get; set; }
 
         public User Author { get; set; }

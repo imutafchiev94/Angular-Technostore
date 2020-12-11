@@ -11,7 +11,7 @@ namespace Technostore.Server.Data.Models
             Products = new List<Product>();
         }
 
-        [Required]
+        
         [Key]
         public int Id { get; set; }
 

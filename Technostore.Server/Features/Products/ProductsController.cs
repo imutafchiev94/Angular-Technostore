@@ -1,16 +1,13 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Technostore.Server.Features.Identity;
-using Technostore.Server.Features.Products.Models;
-using Technostore.Server.Infrastructure.Extensions;
-
-namespace Technostore.Server.Features.Products
+﻿namespace Technostore.Server.Features.Products
 {
-
+    using Models;
+    using Infrastructure.Extensions;
     using static Infrastructure.WebConstants;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    
 
     public class ProductsController : ApiController
     {

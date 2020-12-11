@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Category } from '../models/Category';
+import { Product } from '../models/Product';
+import { CategoryService } from '../service/category.service';
+import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'app-edit-product',
@@ -6,10 +12,87 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-product.component.css']
 })
 export class EditProductComponent implements OnInit {
-
-  constructor() { }
+  productForm: FormGroup
+  productId: string;
+  product: Product
+  isAdmin: boolean;
+  categories: Array<Category>;
+  constructor(private fb: FormBuilder, 
+    private route: ActivatedRoute, 
+    private productService:ProductService,
+    private router: Router,
+    private categoryService: CategoryService) { 
+      this.productForm = this.fb.group({
+        'id': [''],
+        'modelName': ['', Validators.required],
+        'brand': ['', Validators.required],
+        'categoryId': ['', Validators.required],
+        'description': ['', Validators.required],
+        'price': ['', Validators.required],
+        'productImageUrl': ['', Validators.required],
+      })
+    }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.productId = params['id'];
+      this.productService.getProduct(this.productId).subscribe(res => {
+        this.product = res;
+        this.productForm = this.fb.group({
+          'id': [this.productId, Validators.required],
+          'modelName': [this.product.modelName, Validators.required],
+          'brand': [this.product.brand, Validators.required],
+          'categoryId': [this.product.categoryId, Validators.required],
+          'description': [this.product.description, Validators.required],
+          'price': [this.product.price, Validators.required],
+          'productImageUrl': [this.product.productImageUrl, Validators.required],
+        })
+      })
+    })
+
+    this.fetchCategories();
+  }
+
+
+  fetchCategories()
+  {
+    this.categoryService.getCategories().subscribe(categories => {
+      this.categories = categories;
+      console.log(this.categories);
+    })
+  }
+
+  get modelName() {
+    return this.productForm.get('modelName');
+  }
+
+  get brand() {
+    return this.productForm.get('brand');
+  }
+
+  get description() {
+    return this.productForm.get('description');
+  }
+
+  get categoryId() {
+    return this.productForm.get('categoryId');
+  }
+
+  get price() {
+    return this.productForm.get('price');
+  }
+
+  get productImageUrl() {
+    return this.productForm.get('productImageUrl');
+  }
+
+
+  edit()
+  {
+console.log(this.productForm.value);
+      this.productService.editProduct(this.productForm.value).subscribe(res => {
+        console.log(res)
+      });
   }
 
 }
