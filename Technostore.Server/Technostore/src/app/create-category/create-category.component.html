@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <form [formGroup]="categoryForm" (ngSubmit)='create()'>
+              
+                <p class="h4 mb-4 text-light">Create Category</p>
+  
+                
+                <input type="text" class="form-control mb-4" formControlName="name" placeholder="category name">
+                <div *ngIf="name.touched && name.errors?.required" class="alert alert-danger">
+                  This field is required!
+                </div>
+                
+                <img [src]="categoryPicUrl.value">
+                <input type="url"  class="form-control mb-4" formControlName="categoryPicUrl" placeholder="category pic url">
+                <div *ngIf="categoryPicUrl.touched && categoryPicUrl.errors?.required" class="alert alert-danger">
+                  This field is required!
+              </div>
+                
+                <button type="submit" class="btn btn-info btn-block my-4" type="submit">Create</button>
+            
+              </form>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>

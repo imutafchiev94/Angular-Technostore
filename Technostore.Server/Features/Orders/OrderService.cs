@@ -25,7 +25,7 @@ namespace Technostore.Server.Features.Orders
         public async Task<int> Create(string firstName, string lastName, string phoneNumber, string email,
             string address, string city, string country, int postalCode, string userId)
         {
-            var order = await this.data.Orders.FirstOrDefaultAsync(o => o.UserId == userId);
+            var order =  this.data.Orders.FirstOrDefault(o => o.UserId == userId);
 
             order.FirstName = firstName;
             order.LastName = lastName;
@@ -41,16 +41,20 @@ namespace Technostore.Server.Features.Orders
             this.data.Orders.Update(order);
             await this.data.SaveChangesAsync();
 
+            order.Product.Clear();
+            this.data.Update(order);
+            await this.data.SaveChangesAsync();
+
             return order.Id;
         }
 
-        public async Task AddProductToCart(string userId, int productId)
+        public async Task<Order> AddProductToCart(string userId, int productId)
         {
-            var product = await this.data.Products.FirstOrDefaultAsync(p => p.Id == productId);
+            var product =  this.data.Products.FirstOrDefault(p => p.Id == productId);
 
-            var user = await this.data.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            var user =  this.data.Users.FirstOrDefault(u => u.Id == userId);
 
-            var order = await this.data.Orders.FirstOrDefaultAsync(o => o.UserId == userId);
+            var order =  this.data.Orders.FirstOrDefault(o => o.UserId == userId);
 
             if (product != null && user != null)
             {
@@ -65,7 +69,11 @@ namespace Technostore.Server.Features.Orders
                         Country = user.Country,
                         CreatedOn = DateTime.UtcNow,
                         Email = user.Email,
-                        UserId = userId
+                        UserId = userId,
+                        FirstName = "First Name",
+                        LastName = "LastName",
+                        PhoneNumber = "0000",
+                        PostalCode = 1,
                     };
 
                     this.data.Orders.Add(order);
@@ -106,16 +114,20 @@ namespace Technostore.Server.Features.Orders
                         await this.data.SaveChangesAsync();
                     }
                 }
+
+                return order;
             }
+
+            return null;
         }
 
         public async Task RemoveFromCart(string userId, int productId)
         {
-            var product = await this.data.Products.FirstOrDefaultAsync(p => p.Id == productId);
+            var product =  this.data.Products.FirstOrDefault(p => p.Id == productId);
 
-            var user = await this.data.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            var user =  this.data.Users.FirstOrDefault(u => u.Id == userId);
 
-            var order = await this.data.Orders.FirstOrDefaultAsync(o => o.UserId == userId);
+            var order =  this.data.Orders.FirstOrDefault(o => o.UserId == userId);
 
             if (product != null && user != null && order != null )
             {
@@ -144,7 +156,7 @@ namespace Technostore.Server.Features.Orders
 
             if (user != null && order != null)
             {
-                order.Product.Clear();
+                order.Product = new List<ProductOrder>();
                 this.data.Orders.Update(order);
                 await this.data.SaveChangesAsync();
             }
@@ -178,6 +190,22 @@ namespace Technostore.Server.Features.Orders
                 }).FirstOrDefaultAsync();
 
             return order;
+        }
+
+        public async Task<int> GetProductsCount(string userId)
+        {
+            var user = await this.data.Users.FirstOrDefaultAsync(u => u.Id == userId);
+
+            var order = await this.data.Orders.FirstOrDefaultAsync(o => o.UserId == userId);
+
+            var productsCount = 0;
+
+            if (user != null && order != null)
+            {
+                productsCount = order.Product.Count;
+            }
+
+            return productsCount;
         }
     }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj": {}
+    "F:\\Development\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj": {
+    "F:\\Development\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj",
+        "projectUniqueName": "F:\\Development\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj",
         "projectName": "Technostore.Server",
-        "projectPath": "C:\\Projects\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Angular-Technostore\\Technostore.Server\\obj\\",
+        "projectPath": "F:\\Development\\Angular-Technostore\\Technostore.Server\\Technostore.Server.csproj",
+        "packagesPath": "C:\\Users\\imuta\\.nuget\\packages\\",
+        "outputPath": "F:\\Development\\Angular-Technostore\\Technostore.Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\imuta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,6 +55,18 @@
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.SpaServices": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.AspNetCore.SpaServices.Extensions": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.AspNetCore.StaticFiles": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",

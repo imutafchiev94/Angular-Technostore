@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+          
+          
+            <form [formGroup]="loginForm" (ngSubmit)='login()'>
+              <p class="h4 mb-4 text-light">Sign in</p>
+
+              <!-- Email -->
+              <input type="text"  class="form-control mb-4" formControlName="username" placeholder="username">
+              <div *ngIf="username.touched && username.errors?.required" class="alert alert-danger">
+                This field is required!
+              </div>
+              <!-- Password -->
+              <input type="password"  class="form-control mb-4" formControlName="password" placeholder="password">
+              <div *ngIf="password.touched && password.errors?.required" class="alert alert-danger">
+                This field is required!
+            </div>
+              <!-- Sign in button -->
+              <button type="submit" class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+            
+              <!-- Register -->
+              <p class="text-light">Not a member?
+                  <a routerLink="/register" class="text-light decoration-none ml-2 h5"> Register</a>
+              </p>
+            </form>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>

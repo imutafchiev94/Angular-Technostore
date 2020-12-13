@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CreateCategoryComponent } from './create-category/create-category.component';
+import { CreateOrderComponent } from './create-order/create-order.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { DetailsCategoryComponent } from './details-category/details-category.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'products/create', component: CreateProductComponent, canActivate: [AuthGuardService]},
   {path: 'products/:id/edit', component: EditProductComponent, canActivate: [AuthGuardService]},
   {path: 'products/:id', component: DetailsProductComponent},
+  {path: 'orders', component: CreateOrderComponent, canActivate: [AuthGuardService]},
   {path: '', pathMatch: `full`, redirectTo: 'home'},
   {path: 'home', component: HomeComponent}
 ];

@@ -1,0 +1,30 @@
+.example-card {
+    margin: 10%;
+    width: 400px;
+    height: 400px;
+    background-color: #708090;
+
+  }
+  mat-card-header {
+      display: flex;
+      justify-content: center;
+  }
+  
+  img {
+      margin-right: 5%;
+      width: 150px;
+      height: 150px;
+      background-color: #708090;
+  }
+
+  mat-card-title {
+      font-weight: bold;
+      font-size: 25px;
+  }
+
+  mat-card-content {
+
+    margin-top: 10%;
+    
+  }
+

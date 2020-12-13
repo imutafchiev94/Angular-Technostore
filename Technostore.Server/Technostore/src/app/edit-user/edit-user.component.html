@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+          
+          
+            <form [formGroup]="userForm" (ngSubmit)='edit()'>
+              <p class="h4 mb-4 text-light">Edit</p>
+
+              
+              
+              <input type="text"  class="form-control mb-4" formControlName="name" placeholder="Name">
+
+              <input type="text"  class="form-control mb-4" formControlName="country" placeholder="Country">
+
+              
+              <input type="text"  class="form-control mb-4" formControlName="city" placeholder="City">
+
+              <input type="text"  class="form-control mb-4" formControlName="address" placeholder="Address">
+
+              <img [src]="avatar.value">
+              <input type="url"  class="form-control mb-4" formControlName="avatar" placeholder="Avatar">
+
+              
+              <button type="submit" class="btn btn-info btn-block my-4" type="submit">Save changes</button>
+            
+            </form>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>

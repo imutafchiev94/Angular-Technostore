@@ -2,6 +2,7 @@
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Technostore.Server.Infrastructure;
 
 namespace Technostore.Server.Features.Orders
@@ -14,6 +15,7 @@ namespace Technostore.Server.Features.Orders
     using Microsoft.AspNetCore.Mvc;
    
 
+    [EnableCors]
     public class OrdersController : ApiController
     {
         private readonly IOrderService orderService;
@@ -24,7 +26,6 @@ namespace Technostore.Server.Features.Orders
         }
 
         [HttpGet]
-        [Route(Id)]
         [Authorize]
         public async Task<ActionResult<OrdersDetailsModel>> Details()
         {
@@ -37,25 +38,31 @@ namespace Technostore.Server.Features.Orders
 
         [HttpPost]
         [Authorize]
+        [Route(Id)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<int>> AddProduct(int productId)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<int>> AddProduct(int id)
         {
             var userId = this.User.GetId();
 
-            await orderService.AddProductToCart(userId, productId);
+            var order = await orderService.AddProductToCart(userId, id);
 
-            return Ok();
+            if (order == null)
+            {
+                return BadRequest();
+            }
+            return Ok(order);
         }
 
         [HttpPut]
         [Route(Id)]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<int>> RemoveFromCart(int productId)
+        public async Task<ActionResult<int>> RemoveFromCart(int id)
         {
             var userId = this.User.GetId();
 
-            await orderService.RemoveFromCart(userId, productId);
+            await orderService.RemoveFromCart(userId, id);
 
             return Ok();
         }
@@ -85,6 +92,7 @@ namespace Technostore.Server.Features.Orders
 
             return Created(nameof(Create), id);
         }
+
 
     }
 }

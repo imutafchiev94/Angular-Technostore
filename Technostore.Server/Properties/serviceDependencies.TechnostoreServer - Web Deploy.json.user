@@ -1,8 +1,8 @@
 {
   "dependencies": {
     "mssql1": {
-      "restored": true,
-      "restoreTime": "2020-12-03T14:15:52.8106655Z"
+      "restored": false,
+      "restoreTime": "2020-12-12T13:08:05.5338232Z"
     },
     "apis1": {
       "restored": true,
@@ -10,8 +10,48 @@
     }
   },
   "parameters": {
+    "TechnostoreServer.resourceGroupLocation": {
+      "Name": "TechnostoreServer.resourceGroupLocation",
+      "Type": null,
+      "Value": "southcentralus"
+    },
+    "TechnostoreServer.resourceGroupName": {
+      "Name": "TechnostoreServer.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "Technostore"
+    },
+    "mssql1.resourceGroupLocation": {
+      "Name": "mssql1.resourceGroupLocation",
+      "Type": "location",
+      "Value": "southcentralus"
+    },
+    "subscriptionId": {
+      "Name": "subscriptionId",
+      "Type": "subscription",
+      "Value": "dc45d01f-0f7c-497b-88eb-50e590e8f993"
+    },
+    "TechnostoreServer.resourceName": {
+      "Name": "TechnostoreServer.resourceName",
+      "Type": null,
+      "Value": "TechnostoreServer"
+    },
+    "apis1.subscriptionId": {
+      "Name": "apis1.subscriptionId",
+      "Type": "subscription",
+      "Value": "dc45d01f-0f7c-497b-88eb-50e590e8f993"
+    },
     "apis1.resourceGroupName": {
       "Name": "apis1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "Technostore"
+    },
+    "apis1.resourceGroupLocation": {
+      "Name": "apis1.resourceGroupLocation",
+      "Type": "location",
+      "Value": "southcentralus"
+    },
+    "mssql1.resourceGroupName": {
+      "Name": "mssql1.resourceGroupName",
       "Type": "resourceGroup",
       "Value": "Technostore"
     },
@@ -20,15 +60,10 @@
       "Type": "subscription",
       "Value": "dc45d01f-0f7c-497b-88eb-50e590e8f993"
     },
-    "apis1.subscriptionId": {
-      "Name": "apis1.subscriptionId",
+    "TechnostoreServer.subscriptionId": {
+      "Name": "TechnostoreServer.subscriptionId",
       "Type": "subscription",
       "Value": "dc45d01f-0f7c-497b-88eb-50e590e8f993"
-    },
-    "mssql1.resourceGroupName": {
-      "Name": "mssql1.resourceGroupName",
-      "Type": "resourceGroup",
-      "Value": "Technostore"
     }
   }
 }

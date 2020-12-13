@@ -170,7 +170,6 @@ namespace Technostore.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Slug")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -472,7 +471,7 @@ namespace Technostore.Server.Migrations
                     b.HasOne("Technostore.Server.Data.Models.User", "Author")
                         .WithMany("Categories")
                         .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Author");
@@ -483,7 +482,7 @@ namespace Technostore.Server.Migrations
                     b.HasOne("Technostore.Server.Data.Models.User", "User")
                         .WithMany("Order")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
@@ -493,13 +492,12 @@ namespace Technostore.Server.Migrations
                 {
                     b.HasOne("Technostore.Server.Data.Models.User", "Author")
                         .WithMany("Products")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("AuthorId");
 
                     b.HasOne("Technostore.Server.Data.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Author");
